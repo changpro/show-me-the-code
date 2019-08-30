@@ -1,0 +1,11 @@
+By using module of "PILLOW": 'Image','ImageFont'and'ImageDraw' which allow you to make changes from former pic, 
+we can easily add a number on it. Here is the code:
+
+from PIL import Image, ImageDraw, ImageFont
+
+ins = Image.open(r'C:\Users\Administrator\Desktop\text.jpg') // open your profile pic file
+xSize, ySize = ins.size 
+f = ImageDraw.Draw(ins)
+font = ImageFont.truetype(font = 'Gabriola.ttf',size = 102) // an turetype font file is required
+f.text([0.8 * xSize, 0.1 * ySize],'4',fill = (255,0,0),font = font) // add a small '4'
+ins.show() // preview
