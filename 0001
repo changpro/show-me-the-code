@@ -5,3 +5,17 @@ import random as rd
 ab = 'abcdefghijklmnopqrstuvwxyz'
 for i in range(1,201):
     print('%s%s%d%d%d%d' % (rd.choice(ab),rd.choice(ab),rd.randint(1,9),rd.randint(1,9),rd.randint(1,9),rd.randint(1,9)))
+    
+存在问题：字母和数字分布非随机排列，字符串长度不够易重复。
+
+改进：使用string库，here is the code：
+
+import string
+import random
+
+def coupon_generator():
+    for i in range(200):
+        coupon = ''
+        for i in range(12): // 6bit----12bit
+            coupon += random.choice(string.ascii_uppercase + string.digits) // random mixture of uppper letter and num 1-9
+        print(coupon)
